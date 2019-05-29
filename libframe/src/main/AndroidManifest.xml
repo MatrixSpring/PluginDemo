@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yty.libframe" >
+    <application>
+        <activity
+            android:name=".crash.DefaultErrorActivity"
+            android:process=":error_activity" />/
+    </application>
+</manifest>

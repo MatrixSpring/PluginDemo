@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">LibShare</string>
+    <string name="canneldown">Cancel</string>
+    <string name="share_with">Share with</string>
+</resources>

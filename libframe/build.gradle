@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //support
+    api rootProject.ext.support["support-v4"]
+    api rootProject.ext.support["appcompat-v7"]
+    api rootProject.ext.support["recyclerview-v7"]
+    //json解析
+    api rootProject.ext.dependencies.gson
+    //okhttp
+    api rootProject.ext.dependencies.okio
+    api rootProject.ext.dependencies.okhttp
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxandroid
+    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["converter-scalars"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+
+    api rootProject.ext.dependencies["eventbus"]
+
+    api rootProject.ext.dependencies.timber
+    //butterknife 控件绑定
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
+    implementation project(':libshare')
+}
